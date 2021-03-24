@@ -7,8 +7,16 @@
         <servlet-name>anyname</servlet-name>
         <servlet-class>com.LvYuyu.week2.work.HelloWorldServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.LvYuyu.week3.work.RegisterServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>anyname</servlet-name>
         <url-pattern>/hi</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/re</url-pattern>
     </servlet-mapping>
 </web-app>
