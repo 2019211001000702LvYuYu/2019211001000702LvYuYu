@@ -11,9 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<%--@declare id="username"--%><form method="post" action="http://localhost:8080/2019211001000702LvYuyu_war_exploded/re">
-    <label for="username">USERNAME</label>
-    <br/>
+<form method="post" action="http://localhost:8080/2019211001000702LvYuyu_war_exploded/re">
     username<input type="text" name="username"/><br/>
     password<input type="password" name="password"/><br/>
     Email<input type="text" name="email"/><br/>
