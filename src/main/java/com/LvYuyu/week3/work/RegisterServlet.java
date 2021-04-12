@@ -25,8 +25,10 @@ public class RegisterServlet extends HttpServlet {
             System.out.println("init()-->" + con);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
-        }
+        }*/
+         con = (Connection) getServletContext().getAttribute("con");
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
