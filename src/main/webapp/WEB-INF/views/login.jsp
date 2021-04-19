@@ -12,7 +12,7 @@
         out.println(request.getAttribute("message"));
     }
 %>
-<form method="post" action="/LiuMeng2019211001000701_war_exploded/login">
+<form method="post" action="/LvYuyu.2019211001000702_war_exploded/login">
     <table>
         <tr> <td>Username:</td> <td><input type="text" name="Username" required><br/></td></tr>
         <tr> <td>password:</td> <td><input type="password" name="password" required minlength="8"><br/></td></tr>
