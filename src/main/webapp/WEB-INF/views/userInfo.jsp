@@ -9,7 +9,7 @@
 <%@include file="header.jsp"%>
 <h1>User Info</h1>
 <%
-    User user=(User)request.getAttribute("user");
+     User user=(User)request.getAttribute("user");
 %>
 <table>
     <tr><td>Username:</td><td><%=user.getUsernamne()%></td></tr>
