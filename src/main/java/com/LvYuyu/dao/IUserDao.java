@@ -1,7 +1,6 @@
 package com.LvYuyu.dao;
 
 import com.LvYuyu.model.User;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
