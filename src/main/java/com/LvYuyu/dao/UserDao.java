@@ -1,5 +1,4 @@
 package com.LvYuyu.dao;
-
 import com.LvYuyu.model.User;
 
 import java.sql.Connection;
@@ -15,7 +14,7 @@ public class UserDao implements IUserDao{
     public boolean saveUser(Connection con, User user) throws SQLException {
         String sql="insert into Usertable values(?,?,?,?,?)";
         PreparedStatement pstmt= con.prepareStatement(sql);
-        pstmt.setString(1,user.getUsernamne());
+        pstmt.setString(1,user.getUsername());
         pstmt.setString(2,user.getPassword());
         pstmt.setString(3,user.getEmail());
         pstmt.setString(4,user.getGender());
@@ -36,9 +35,14 @@ public class UserDao implements IUserDao{
 
     @Override
     public int updateUser(Connection con, User user) throws SQLException {
-        String sql="update Usertable set id=?";
+        String sql="update Usertable set username=?,password=?,email=?,gender=?,birthdate=? where id=?";
         PreparedStatement pstmt= con.prepareStatement(sql);
-        pstmt.setInt(1,user.getId());
+        pstmt.setString(1,user.getUsername());
+        pstmt.setString(2,user.getPassword());
+        pstmt.setString(3,user.getEmail());
+        pstmt.setString(4,user.getGender());
+        pstmt.setDate(5,new java.sql.Date(user.getBirthdate().getTime()));
+        pstmt.setInt(6,user.getId());
         return pstmt.executeUpdate();
     }
 
@@ -52,7 +56,7 @@ public class UserDao implements IUserDao{
         if(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("email"));
             user.setGender(rs.getString("gender"));
@@ -72,7 +76,7 @@ public class UserDao implements IUserDao{
         if(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("email"));
             user.setGender(rs.getString("gender"));
@@ -89,11 +93,11 @@ public class UserDao implements IUserDao{
         pstmt.setString(1,username);
         ResultSet rs= pstmt.executeQuery();
         User user=null;
-        List<User> Lu=null;
+        List<User> Lu=new ArrayList<User>();
         if(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("email"));
             user.setGender(rs.getString("gender"));
@@ -110,11 +114,11 @@ public class UserDao implements IUserDao{
         pstmt.setString(1,password);
         ResultSet rs= pstmt.executeQuery();
         User user=null;
-        List<User> Lu=null;
+        List<User> Lu=new ArrayList<User>();
         if(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("email"));
             user.setGender(rs.getString("gender"));
@@ -131,11 +135,11 @@ public class UserDao implements IUserDao{
         pstmt.setString(1,email);
         ResultSet rs= pstmt.executeQuery();
         User user=null;
-        List<User> Lu=null;
+        List<User> Lu=new ArrayList<User>();
         if(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("email"));
             user.setGender(rs.getString("gender"));
@@ -152,11 +156,11 @@ public class UserDao implements IUserDao{
         pstmt.setString(1,gender);
         ResultSet rs= pstmt.executeQuery();
         User user=null;
-        List<User> Lu=null;
+        List<User> Lu=new ArrayList<User>();
         if(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("email"));
             user.setGender(rs.getString("gender"));
@@ -173,11 +177,11 @@ public class UserDao implements IUserDao{
         pstmt.setDate(1, (java.sql.Date) birthDate);
         ResultSet rs= pstmt.executeQuery();
         User user=null;
-        List<User> Lu=null;
+        List<User> Lu=new ArrayList<User>();
         if(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("email"));
             user.setGender(rs.getString("gender"));
@@ -193,11 +197,11 @@ public class UserDao implements IUserDao{
         PreparedStatement pstmt= con.prepareStatement(sql);
         ResultSet rs= pstmt.executeQuery();
         User user=null;
-        List<User> Lu=null;
+        List<User> Lu=new ArrayList<User>();
         if(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
-            user.setUsernamne(rs.getString("username"));
+            user.setUsername(rs.getString("username"));
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("email"));
             user.setGender(rs.getString("gender"));
