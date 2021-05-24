@@ -1,4 +1,5 @@
 package com.LvYuyu.dao;
+
 import com.LvYuyu.model.User;
 
 import java.sql.Connection;
@@ -8,8 +9,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class UserDao implements IUserDao{
-
+public class UserDao implements IUserDao {
     @Override
     public boolean saveUser(Connection con, User user) throws SQLException {
         String sql="insert into Usertable values(?,?,?,?,?)";
@@ -94,7 +94,7 @@ public class UserDao implements IUserDao{
         ResultSet rs= pstmt.executeQuery();
         User user=null;
         List<User> Lu=new ArrayList<User>();
-        if(rs.next()){
+        while(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
             user.setUsername(rs.getString("username"));
@@ -115,7 +115,7 @@ public class UserDao implements IUserDao{
         ResultSet rs= pstmt.executeQuery();
         User user=null;
         List<User> Lu=new ArrayList<User>();
-        if(rs.next()){
+        while(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
             user.setUsername(rs.getString("username"));
@@ -136,7 +136,7 @@ public class UserDao implements IUserDao{
         ResultSet rs= pstmt.executeQuery();
         User user=null;
         List<User> Lu=new ArrayList<User>();
-        if(rs.next()){
+        while(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
             user.setUsername(rs.getString("username"));
@@ -157,7 +157,7 @@ public class UserDao implements IUserDao{
         ResultSet rs= pstmt.executeQuery();
         User user=null;
         List<User> Lu=new ArrayList<User>();
-        if(rs.next()){
+        while(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
             user.setUsername(rs.getString("username"));
@@ -178,7 +178,7 @@ public class UserDao implements IUserDao{
         ResultSet rs= pstmt.executeQuery();
         User user=null;
         List<User> Lu=new ArrayList<User>();
-        if(rs.next()){
+        while(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
             user.setUsername(rs.getString("username"));
@@ -198,7 +198,7 @@ public class UserDao implements IUserDao{
         ResultSet rs= pstmt.executeQuery();
         User user=null;
         List<User> Lu=new ArrayList<User>();
-        if(rs.next()){
+        while(rs.next()){
             user=new User();
             user.setId(rs.getInt("id"));
             user.setUsername(rs.getString("username"));
