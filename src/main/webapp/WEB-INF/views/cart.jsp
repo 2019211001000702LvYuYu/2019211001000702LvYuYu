@@ -84,7 +84,7 @@
 <section id="do_action">
     <div class="container">
 
-        <div class="row">
+         <div class="row">
             <div class="col-sm-6"></div>
             <div class="col-sm-6">
                 <div class="total_area">

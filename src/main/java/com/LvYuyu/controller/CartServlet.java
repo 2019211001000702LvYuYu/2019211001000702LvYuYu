@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "CartServlet", value = "/cart")
+ @WebServlet(name = "CartServlet", value = "/cart")
 public class CartServlet extends HttpServlet {
     Connection con=null;
 

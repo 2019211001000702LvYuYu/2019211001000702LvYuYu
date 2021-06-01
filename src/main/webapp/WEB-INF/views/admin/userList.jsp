@@ -12,7 +12,7 @@
         </div>
         <div class="col-sm-2">
             <div class="single-widget">
-                <h2>Modules</h2>
+                  <h2>Modules</h2>
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="<%=basePath%>admin/home">Home</a></li>
                     <li><a href="<%=basePath%>admin/productList">Product</a></li>
@@ -42,7 +42,7 @@
                    driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
                    url="jdbc:sqlserver://localhost;databaseName=userdb;"
                    user="sa"
-                   password="123456"/>
+                   password="admin123456789"/>
 <sql:query var="allUser" dataSource="${myDS}">
     Select * from Usertable;
 </sql:query>
